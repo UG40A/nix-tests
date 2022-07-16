@@ -7,7 +7,7 @@ with lib;
 {
   imports = [ <nixpkgs/nixos/modules/installer/netboot/netboot-minimal.nix> ./autoreboot.nix ./kexec.nix ./justdoit.nix ];
 
-  boot.supportedFilesystems = [ "xfs" ];
+  boot.supportedFilesystems = [ "zfs" ];
   boot.loader.grub.enable = false;
   boot.kernelParams = [
     "console=ttyS0" "console=tty1"  # allows certain forms of remote access, if the hardware is setup right
